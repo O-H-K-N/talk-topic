@@ -2,6 +2,7 @@
   <div class="m-auto" style="width: 500px">
     <h1 class="text-center mt-5 mb-3"><%= t'.title' %></h1>
     <%= form_with model: @user, local: true do |f| %>
+      <%= render 'shared/error_message', object: @user %>
         <div class="form-group">
           <%= f.label :account_name, User.human_attribute_name(:account_name)  %>
           <%= f.text_field :account_name, autofocus: true, class: "form-control" %>
