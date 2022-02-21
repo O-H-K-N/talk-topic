@@ -44,10 +44,11 @@ gem "bootsnap", require: false
 
 # Use Sass to process CSS
 gem "sass-rails"
-gem 'font-awesome-rails'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'font-awesome-sass'
+
+gem "sorcery"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -67,6 +68,9 @@ group :development, :test do
   # Code analyse
   gem 'rubocop', require: false
   gem 'rubocop-rails', require:false
+
+  #Japanese support
+  gem 'rails-i18n'
 end
 
 group :development do
