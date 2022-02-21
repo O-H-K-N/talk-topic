@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "homes#index"
 
   resources :users
+  resources :topics
 
   get '/login', to: 'user_sessions#new', as: :login
   post '/login', to: 'user_sessions#create'

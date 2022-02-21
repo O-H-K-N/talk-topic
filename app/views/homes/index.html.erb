@@ -1,5 +1,18 @@
 <div class='top-wrapper'>
-  <div class='top-inner-text'>
-    <h1 class="display-4 text-center mt-5">金策メソッド</h1>
+  <div class='top-inner-text text-center'>
+    <h1 class="display-4 mt-5"><%= t('defaults.app_name') %></h1>
+    <%= image_tag 'hikidashi_ooi_businesswoman.png', size: '250x250' %>
+    <p class="small mb-4">話の引き出しが多い人(イラストや)</p>
+    <%# <h4 class="mb-4">みんなの会話のネタを共有し合うアプリです。</h4> %>
+    <p class="mb-2 text-primary">
+      会社の飲み会、合コン、久々に会った友達、オンライン通話<br>
+      初デート、お取引先とのランチ、マッチングアプリ...<br>
+    </p>
+    <p>
+      以上の場面で会話に困った経験ありませんか？<br>
+      このアプリは様々な場面に応じて、役に立った会話のネタを共有しあうアプリです。<br>
+    </p>
+    <%= link_to t('defaults.topics'), topics_path, class: 'btn btn-warning font-weight-bold text-light mb-3' %>
+    <%= link_to t('defaults.new_topic'), new_topic_path, class: 'btn btn-warning font-weight-bold text-light mb-3' %>
   </div>
 </div>

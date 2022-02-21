@@ -1,10 +1,17 @@
 ja:
   defaults:
+    app_name: '会話のネタ帳'
+    footer_app_name: '© 2022. 会話のネタ帳'
     sign_up: 'ユーザ登録'
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
     not_login: 'ログインしてください'
+    user_name: 'お名前'
+    topic: '会話のネタ'
+    topics: '会話のネタ一覧'
+    new_topic: '会話のネタを提供する'
+    offer_day: '提供日'
   users:
     new:
       title: 'ユーザー登録'
@@ -22,3 +29,13 @@ ja:
       login_error: 'ログインに失敗しました'
     destroy:
       logout_success: 'ログアウトしました'
+  topics:
+    index:
+      title: 'みんなの会話のネタ一覧'
+      to_new_topic: '会話のネタを提供する'
+      please_topic: '会話のネタを提供してください。。。'
+    new:
+      title: '会話のネタを提供してください！'
+    create:
+      success: 'ネタの提供ありがとうございます！'
+      danger: '作成できませんでした'
