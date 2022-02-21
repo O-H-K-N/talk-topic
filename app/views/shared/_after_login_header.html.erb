@@ -2,11 +2,11 @@
   <nav class="navbar navbar-light bg-warning">
     <div class="container">
       <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
-        <strong class="text-light"><%= t('defaults.app_name') %></strong>
+        <strong class="text-light">話のネタ帳</strong>
       <% end %>
       <form class="form-inline">
-        <%= link_to topics_path do %>
-          <button class="btn btn-outline-light font-weight-bold mx-3" type="button"><%= t('defaults.topics')%></button>
+        <%= link_to logout_path, method: :delete do %>
+          <button class="btn btn-outline-light font-weight-bold mx-3" type="button"><%= t('defaults.logout')%></button>
         <% end %>
       </form>
     </div>

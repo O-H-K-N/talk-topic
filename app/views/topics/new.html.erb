@@ -3,6 +3,7 @@
     <h1 class="text-center mt-5 mb-3"><%= t'.title' %></h1>
     <div class="text-center">
       <%= image_tag 'shinbun_obaasan.png', size: '200x200' %>
+      <p class="small mb-2">会話のネタを探すおばあさん(イラストや)</p>
     </div>
     <%= form_with model: @topic, local: true do |f| %>
       <%= render 'shared/error_message', object: @topic %>

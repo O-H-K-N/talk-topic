@@ -2,7 +2,7 @@ ja:
   activerecord:
     models:
       user: 'ユーザ'
-      topic: '話題'
+      topic: '会話'
     attributes:
       user:
         account_name: '名前'
@@ -11,4 +11,4 @@ ja:
         password_confirmation: 'パスワード確認'
       topic:
         user_name: 'お名前'
-        title: '話のネタ'
+        title: '会話のネタ'
