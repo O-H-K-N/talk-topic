@@ -1,10 +1,14 @@
 ja:
   activerecord:
-    models: 'ユーザ'
+    models:
+      user: 'ユーザ'
+      topic: '話題'
     attributes:
       user:
-        id: ID
         account_name: '名前'
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
+      topic:
+        user_name: 'お名前'
+        title: '話のネタ'

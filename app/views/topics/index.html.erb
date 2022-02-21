@@ -1,1 +1,27 @@
-aaa
+<div class="container">
+  <div class="text-center">
+    <h1 class="mt-5 mb-3"><%= t'.title' %></h1>
+    <%= link_to t('.to_new_topic'), new_topic_path, class: 'btn btn-warning font-weight-bold text-light mb-3' %>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <% if @topics.present? %>
+        <table class="table">
+          <thead>
+            <tr>
+              <th style="width: 25%"><%= t('defaults.user_name') %></th>
+              <th style="width: 50%"><%= t('defaults.topic') %></th>
+              <th style="width: 25%"><%= t('defaults.offer_day') %></th>
+            </tr>
+          </thead>
+          <%= render @topics %>
+        </table>
+        <% else %>
+          <div class="text-center">
+            <p class="font-weight-bold my-2">話のネタを提供してください。。。</p>
+            <br>
+            <%= image_tag 'message_onegaishimasu.png' %>
+          </div>
+        <% end %>
+      </div>
+</div>

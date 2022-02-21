@@ -5,6 +5,9 @@ ja:
     register: '登録'
     logout: 'ログアウト'
     not_login: 'ログインしてください'
+    user_name: 'お名前'
+    topic: '話のネタ'
+    offer_day: '提供日'
   users:
     new:
       title: 'ユーザー登録'
@@ -22,3 +25,12 @@ ja:
       login_error: 'ログインに失敗しました'
     destroy:
       logout_success: 'ログアウトしました'
+  topics:
+    index:
+      title: 'みんなの話のネタ一覧'
+      to_new_topic: '話のネタを提供する'
+    new:
+      title: '話のネタを提供してください！'
+    create:
+      success: 'ネタの提供ありがとうございます！'
+      danger: '作成できませんでした'
