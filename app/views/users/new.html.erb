@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="m-auto" style="width: 500px">
+    <h1 class="text-center mt-5 mb-3"><%= t'.title' %></h1>
+    <%= form_with model: @user, local: true do |f| %>
+        <div class="form-group">
+          <%= f.label :account_name, User.human_attribute_name(:account_name)  %>
+          <%= f.text_field :account_name, autofocus: true, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email, User.human_attribute_name(:email)  %>
+          <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password, User.human_attribute_name(:password)  %>
+          <%= f.password_field :password, autofocus: true, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password_confirmation,User.human_attribute_name(:password_confirmation)  %>
+          <%= f.password_field :password_confirmation, autofocus: true, class: "form-control" %>
+        </div>
+        <div class="actions">
+          <%= f.submit (t'defaults.register') , class: 'btn btn-warning text-light' %>
+        </div>
+    <% end %>
+    <div class="text-center mt-3">
+      <%= link_to t('.to_login_page'), login_path, class: 'text-warning font-weight-bold' %>
+    </div>
+  </div>
+</div>
