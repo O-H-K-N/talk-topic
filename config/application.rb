@@ -32,6 +32,8 @@ module RunteqReview
     # config.eager_load_paths << Rails.root.join("extras")
 
     # Don't generate system test files.
+    config.active_record.default_timezone = :local
+    config.time_zone = 'Tokyo'
     config.generators.system_tests = nil
     config.generators do |g|
       g.skip_routes true
