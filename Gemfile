@@ -68,6 +68,9 @@ group :development, :test do
   # Code analyse
   gem 'rubocop', require: false
   gem 'rubocop-rails', require:false
+
+  #Japanese support
+  gem 'rails-i18n'
 end
 
 group :development do
