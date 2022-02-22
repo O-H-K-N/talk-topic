@@ -10,6 +10,7 @@ ja:
     user_name: 'お名前'
     topic: '会話のネタ'
     topics: '会話のネタ一覧'
+    tag: 'タグ'
     new_topic: '会話のネタを提供する'
     offer_day: '提供日'
   users:
