@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
   skip_before_action :require_login
 
   def index;
-    @topics = Topic.all.order(created_at: :desc)
+    @topics = Topic.all.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def new

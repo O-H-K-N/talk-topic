@@ -17,12 +17,14 @@
           </thead>
           <%= render @topics %>
         </table>
-        <% else %>
-          <div class="text-center">
-            <p class="font-weight-bold my-2"><%= t('.please_topic') %></p>
-            <br>
-            <%= image_tag 'message_onegaishimasu.png' %>
-          </div>
-        <% end %>
-      </div>
+      <% else %>
+        <div class="text-center">
+          <p class="font-weight-bold my-2"><%= t('.please_topic') %></p>
+          <br>
+          <%= image_tag 'message_onegaishimasu.png' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <%= paginate @topics, window: 1, outer_window: 2 %>
 </div>

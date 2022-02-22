@@ -13,6 +13,13 @@ ja:
     tag: 'タグ'
     new_topic: '会話のネタを提供する'
     offer_day: '提供日'
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "..."
   users:
     new:
       title: 'ユーザー登録'
