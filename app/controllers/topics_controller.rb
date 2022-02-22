@@ -23,7 +23,8 @@ class TopicsController < ApplicationController
   def topic_params
     params.require(:topic).permit(
       :user_name,
-      :title
+      :title,
+      tag_ids: []
     )
   end
 
