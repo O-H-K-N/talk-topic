@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="m-auto" style="width: 600px">
+    <h1 class="text-center mt-5 mb-3"><%= t'.title' %></h1>
+    <%= form_with model: @tag, local: true do |f| %>
+      <%= render 'shared/error_message', object: @tag %>
+        <div class="form-group">
+          <%= f.label :name, Tag.human_attribute_name(:name)  %>
+          <%= f.text_field :name, autofocus: true, class: "form-control" %>
+        </div>
+        <div class="actions">
+          <%= f.submit (t'defaults.register') , class: 'btn btn-warning text-light' %>
+        </div>
+    <% end %>
+  </div>
+</div>

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get 'tags'
     end
   end
+  resources :tags
 
   get '/login', to: 'user_sessions#new', as: :login
   post '/login', to: 'user_sessions#create'

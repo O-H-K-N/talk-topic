@@ -1,15 +1,12 @@
 <header class="mb-auto">
   <nav class="navbar navbar-light bg-warning">
     <div class="container">
-      <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do%>
-        <strong class="text-light">話のネタ帳</strong>
+      <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
+        <strong class="text-light"><%= t('defaults.app_name') %></strong>
       <% end %>
       <form class="form-inline">
-        <%= link_to sign_up_path do %>
-          <button class="btn btn-outline-light font-weight-bold mx-3" type="button"><%= t('defaults.sign_up') %></button>
-        <% end %>
-        <%= link_to login_path do%>
-          <button class="btn btn-outline-light font-weight-bold mx-3" type="button"><%= t('defaults.login') %></button>
+        <%= link_to topics_path do %>
+          <button class="btn btn-outline-light font-weight-bold mx-3" type="button"><%= t('defaults.topics')%></button>
         <% end %>
       </form>
     </div>

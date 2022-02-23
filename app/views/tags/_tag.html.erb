@@ -1,0 +1,14 @@
+<tbody>
+  <tr>
+    <td>
+      <p class='mb-0'><%= tag.name %></p>
+    </td>
+    <td>
+      <%= link_to tag_path(tag),method: :delete, data: { confirm: t('defaults.delete_confirm', name: tag.name) } do %>
+        <div class="mr-2 mb-1 btn btn-outline-warning btn-sm">
+          削除
+        </div>
+      <% end %>
+    </td>
+  </tr>
+</tbody>
