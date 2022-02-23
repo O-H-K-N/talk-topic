@@ -13,6 +13,8 @@ ja:
     please_topic: '会話のネタを提供してください。。。'
     tag: 'タグ'
     tags: 'タグ一覧'
+    like: 'いいね！'
+    like_count: 'いいね数'
     new_topic: '会話のネタを提供する'
     offer_day: '提供日'
     delete: '削除ボタン'
