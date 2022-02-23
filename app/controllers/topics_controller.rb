@@ -1,8 +1,8 @@
 class TopicsController < ApplicationController
   skip_before_action :require_login
 
-  def index;
-    @topics = Topic.all.order(created_at: :desc)
+  def index
+    @topics = Topic.all.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def new
@@ -18,12 +18,22 @@ class TopicsController < ApplicationController
     end
   end
 
+  def tags
+    @tag = Tag.find_by(id: params[:format])
+    if @tag
+      @topics = @tag.topics.all.order(created_at: :desc).page(params[:page]).per(10)
+    else
+      redirect_to root_path
+    end
+  end
+
   private
 
   def topic_params
     params.require(:topic).permit(
       :user_name,
-      :title
+      :title,
+      tag_ids: []
     )
   end
 

@@ -1,18 +1,32 @@
-<div class='top-wrapper'>
+<div class='container'>
   <div class='top-inner-text text-center'>
     <h1 class="display-4 mt-5"><%= t('defaults.app_name') %></h1>
     <%= image_tag 'hikidashi_ooi_businesswoman.png', size: '250x250' %>
     <p class="small mb-4">話の引き出しが多い人(イラストや)</p>
-    <%# <h4 class="mb-4">みんなの会話のネタを共有し合うアプリです。</h4> %>
     <p class="mb-2 text-primary">
       会社の飲み会、合コン、久々に会った友達、オンライン通話<br>
       初デート、お取引先とのランチ、マッチングアプリ...<br>
     </p>
-    <p>
+    <p class="mb-2">
       以上の場面で会話に困った経験ありませんか？<br>
-      このアプリは様々な場面に応じて、役に立った会話のネタを共有しあうアプリです。<br>
+      このアプリは様々な場面に応じて、役に立った会話のネタを共有しあうアプリです<br>
     </p>
     <%= link_to t('defaults.topics'), topics_path, class: 'btn btn-warning font-weight-bold text-light mb-3' %>
-    <%= link_to t('defaults.new_topic'), new_topic_path, class: 'btn btn-warning font-weight-bold text-light mb-3' %>
+    <div class="mb-3">
+      <p class="mb-1">様々な場面で使える会話のネタを探してみましょう</p>
+      <div class="row-3">
+        <%- @tags.each do |tag| %>
+          <%= link_to tags_topics_path(tag) do %>
+            <div class="col-3 mr-2 mb-1 btn btn-outline-warning btn-sm">
+              <%= tag.name %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div>
+      <strong>使える会話のネタを提供してください！</strong><br>
+      <%= link_to t('defaults.new_topic'), new_topic_path, class: 'btn btn-warning font-weight-bold text-light mt-1' %>
+    </div>
   </div>
 </div>

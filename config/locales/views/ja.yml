@@ -10,8 +10,20 @@ ja:
     user_name: 'お名前'
     topic: '会話のネタ'
     topics: '会話のネタ一覧'
+    please_topic: '会話のネタを提供してください。。。'
+    tag: 'タグ'
+    tags: 'タグ一覧'
     new_topic: '会話のネタを提供する'
     offer_day: '提供日'
+    delete: '削除ボタン'
+    delete_confirm: 'タグ：「%{name}」を削除してもよろしいですか？'
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "..."
   users:
     new:
       title: 'ユーザー登録'
@@ -33,9 +45,22 @@ ja:
     index:
       title: 'みんなの会話のネタ一覧'
       to_new_topic: '会話のネタを提供する'
-      please_topic: '会話のネタを提供してください。。。'
     new:
       title: '会話のネタを提供してください！'
     create:
       success: 'ネタの提供ありがとうございます！'
       danger: '作成できませんでした'
+    tags:
+      title: '%{tag_name}での会話のネタ一覧'
+      to_new_topic: '会話のネタを提供する'
+  tags:
+    index:
+      title: 'タグ一覧'
+      to_new_tag: 'タグを作成する'
+      not_tag: 'タグが登録されていません'
+    new:
+      title: 'タグを作成'
+    create:
+      success: 'タグ：「%{name}」を登録しました'
+    destroy:
+      success: 'タグ：「%{name}」を削除しました'

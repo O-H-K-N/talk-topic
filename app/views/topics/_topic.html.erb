@@ -1,10 +1,21 @@
 <tbody>
   <tr>
     <td>
-      <p><%= topic.user_name %></p>
+      <p class='mb-0'><%= topic.user_name %></p>
     </td>
     <td>
-      <strong><%= simple_format(topic.title) %></strong>
+      <%= simple_format(topic.title, {}, wrapper_tag: "strong") %>
+    </td>
+    <td>
+      <div class="row">
+        <%- topic.tags.each do |tag| %>
+          <%= link_to tags_topics_path(tag) do %>
+            <div class="mr-2 mb-1 btn btn-outline-warning btn-sm">
+              <%= tag.name %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     </td>
     <td>
       <%= topic.created_at.strftime('%Y-%m-%d') %>

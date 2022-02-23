@@ -71,6 +71,9 @@ group :development, :test do
 
   #Japanese support
   gem 'rails-i18n'
+
+  #other
+  gem 'kaminari'
 end
 
 group :development do

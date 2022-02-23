@@ -12,3 +12,7 @@ ja:
       topic:
         user_name: 'お名前'
         title: '会話のネタ'
+        tags: 'タグ'
+        tag_ids: 'タグ'
+      tag:
+        name: '新しいタグ'
