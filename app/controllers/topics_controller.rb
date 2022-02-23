@@ -1,7 +1,7 @@
 class TopicsController < ApplicationController
   skip_before_action :require_login
 
-  def index;
+  def index
     @topics = Topic.all.order(created_at: :desc).page(params[:page]).per(10)
   end
 
@@ -15,6 +15,15 @@ class TopicsController < ApplicationController
       redirect_to topics_path, success: t('.success')
     else
       render :new
+    end
+  end
+
+  def tags
+    @tag = Tag.find_by(id: params[:format])
+    if @tag
+      @topics = @tag.topics.all.order(created_at: :desc).page(params[:page]).per(10)
+    else
+      redirect_to root_path
     end
   end
 

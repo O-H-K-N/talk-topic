@@ -47,3 +47,6 @@ ja:
     create:
       success: 'ネタの提供ありがとうございます！'
       danger: '作成できませんでした'
+    tags:
+      title: '%{tag_name}での会話のネタ一覧'
+      to_new_topic: '会話のネタを提供する'

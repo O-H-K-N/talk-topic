@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   root "homes#index"
 
   resources :users
-  resources :topics
+  resources :topics do
+    collection do
+      get 'tags'
+    end
+  end
 
   get '/login', to: 'user_sessions#new', as: :login
   post '/login', to: 'user_sessions#create'

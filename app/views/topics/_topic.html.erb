@@ -9,9 +9,11 @@
     <td>
       <div class="row">
         <%- topic.tags.each do |tag| %>
-          <div class="mr-2 mb-1 btn btn-outline-warning btn-sm">
-            <%= tag.name %>
-          </div>
+          <%= link_to tags_topics_path(tag) do %>
+            <div class="mr-2 mb-1 btn btn-outline-warning btn-sm">
+              <%= tag.name %>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </td>
