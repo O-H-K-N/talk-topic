@@ -10,6 +10,7 @@ ja:
     user_name: 'お名前'
     topic: '会話のネタ'
     topics: '会話のネタ一覧'
+    please_topic: '会話のネタを提供してください。。。'
     tag: 'タグ'
     tags: 'タグ一覧'
     new_topic: '会話のネタを提供する'
@@ -44,7 +45,6 @@ ja:
     index:
       title: 'みんなの会話のネタ一覧'
       to_new_topic: '会話のネタを提供する'
-      please_topic: '会話のネタを提供してください。。。'
     new:
       title: '会話のネタを提供してください！'
     create:
