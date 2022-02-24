@@ -2,31 +2,10 @@
   <div class="text-center">
     <h1 class="mt-5 mb-3"><%= t'.title' %></h1>
     <%= link_to t('.to_new_topic'), new_topic_path, class: 'btn btn-warning font-weight-bold text-light mb-3' %>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <% if @topics.present? %>
-        <table class="table">
-          <thead>
-            <tr>
-              <th style="width: 18%"><%= t('defaults.user_name') %></th>
-              <th style="width: 25%"><%= t('defaults.topic') %></th>
-              <th style="width: 25%"><%= t('defaults.tag') %></th>
-              <th style="width: 12%"><%= t('defaults.offer_day') %></th>
-              <th style="width: 10%"><%= t('defaults.like') %></th>
-              <th style="width: 10%"><%= t('defaults.like_count') %></th>
-            </tr>
-          </thead>
-          <%= render @topics %>
-        </table>
-      <% else %>
-        <div class="text-center">
-          <p class="font-weight-bold my-2"><%= t('defaults.please_topic') %></p>
-          <br>
-          <%= image_tag 'message_onegaishimasu.png' %>
-        </div>
-      <% end %>
+    <div class='text-right'>
+      <%= link_to t('defaults.new_order_topic'), topics_path, class: 'btn btn-outline-warning mb-3 mr-2' %>
+      <%= link_to t('defaults.popular_order_topic'), topics_path(type: 'popular'), class: 'btn btn-outline-warning mb-3' %>
     </div>
   </div>
-  <%= paginate @topics, window: 1, outer_window: 2 %>
+  <%= render 'topics', topics: @topics %>
 </div>

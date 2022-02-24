@@ -2,7 +2,13 @@ class TopicsController < ApplicationController
   skip_before_action :require_login
 
   def index
-    @topics = Topic.all.order(created_at: :desc).page(params[:page]).per(10)
+    topics = Topic.all
+    if params[:type] == 'popular'
+      topics = topics.sort {|a,b| b.likes.size <=> a.likes.size}
+      @topics = Kaminari.paginate_array(topics).page(params[:page]).per(10)
+    else
+      @topics = topics.order(created_at: :desc).page(params[:page]).per(10)
+    end
   end
 
   def new
@@ -21,7 +27,13 @@ class TopicsController < ApplicationController
   def tags
     @tag = Tag.find_by(id: params[:format])
     if @tag
-      @topics = @tag.topics.all.order(created_at: :desc).page(params[:page]).per(10)
+      topics = @tag.topics.all
+      if params[:type] == 'popular'
+        topics = topics.sort {|a,b| b.likes.size <=> a.likes.size}
+        @topics = Kaminari.paginate_array(topics).page(params[:page]).per(10)
+      else
+        @topics = topics.order(created_at: :desc).page(params[:page]).per(10)
+      end
     else
       redirect_to root_path
     end
