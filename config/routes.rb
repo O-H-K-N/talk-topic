@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
   root "homes#index"
 
-  resources :topics do
-    collection do
-      get 'tags'
-    end
-  end
+  resources :topics
   resources :tags
   resources :likes, only: :create
 

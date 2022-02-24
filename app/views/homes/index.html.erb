@@ -16,7 +16,7 @@
       <p class="mb-1">様々な場面で使える会話のネタを探してみましょう</p>
       <div class="row-3">
         <%- @tags.each do |tag| %>
-          <%= link_to tags_topics_path(tag) do %>
+          <%= link_to tag_path(tag) do %>
             <div class="col-3 mr-2 mb-1 btn btn-outline-warning btn-sm">
               <%= tag.name %>
             </div>

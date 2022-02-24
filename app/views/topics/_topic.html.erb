@@ -9,7 +9,7 @@
     <td>
       <div class="row pl-3">
         <%- topic.tags.each do |tag| %>
-          <%= link_to tags_topics_path(tag) do %>
+          <%= link_to tag_path(tag) do %>
             <div class="mr-2 mb-1 btn btn-outline-warning btn-sm">
               <%= tag.name %>
             </div>
@@ -28,7 +28,7 @@
       </div>
     </td>
     <td>
-      <%= render 'like_count', topic: topic %>
+      <%= render 'topics/like_count', topic: topic %>
     </td>
   </tr>
 </tbody>

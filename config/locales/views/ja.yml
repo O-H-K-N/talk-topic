@@ -54,14 +54,14 @@ ja:
     create:
       success: 'ネタの提供ありがとうございます！'
       danger: '作成できませんでした'
-    tags:
-      title: '%{tag_name}での会話のネタ一覧'
-      to_new_topic: '会話のネタを提供する'
   tags:
     index:
       title: 'タグ一覧'
       to_new_tag: 'タグを作成する'
       not_tag: 'タグが登録されていません'
+    show:
+      title: '%{tag_name}での会話のネタ一覧'
+      to_new_topic: '会話のネタを提供する'
     new:
       title: 'タグを作成'
     create:
