@@ -7,9 +7,9 @@
       <%= simple_format(topic.title, {}, wrapper_tag: "strong") %>
     </td>
     <td>
-      <div class="row">
+      <div class="row pl-3">
         <%- topic.tags.each do |tag| %>
-          <%= link_to tags_topics_path(tag) do %>
+          <%= link_to tag_path(tag) do %>
             <div class="mr-2 mb-1 btn btn-outline-warning btn-sm">
               <%= tag.name %>
             </div>
@@ -19,6 +19,16 @@
     </td>
     <td>
       <%= topic.created_at.strftime('%Y-%m-%d') %>
+    </td>
+    <td>
+      <div class='text-decoration-none ml-2'>
+        <%= link_to likes_path(topic_id: topic.id), method: :post, remote: true do %>
+          <%= image_tag 'hand_good.png', size: '40x40', class: 'mr-2' %>
+        <% end %>
+      </div>
+    </td>
+    <td>
+      <%= render 'topics/like_count', topic: topic %>
     </td>
   </tr>
 </tbody>

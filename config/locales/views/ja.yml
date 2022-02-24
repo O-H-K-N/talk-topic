@@ -10,9 +10,13 @@ ja:
     user_name: 'お名前'
     topic: '会話のネタ'
     topics: '会話のネタ一覧'
+    new_order_topic: '新着順'
+    popular_order_topic: 'いいね順'
     please_topic: '会話のネタを提供してください。。。'
     tag: 'タグ'
     tags: 'タグ一覧'
+    like: 'いいね！'
+    like_count: 'いいね数'
     new_topic: '会話のネタを提供する'
     offer_day: '提供日'
     delete: '削除ボタン'
@@ -50,14 +54,14 @@ ja:
     create:
       success: 'ネタの提供ありがとうございます！'
       danger: '作成できませんでした'
-    tags:
-      title: '%{tag_name}での会話のネタ一覧'
-      to_new_topic: '会話のネタを提供する'
   tags:
     index:
       title: 'タグ一覧'
       to_new_tag: 'タグを作成する'
       not_tag: 'タグが登録されていません'
+    show:
+      title: '%{tag_name}での会話のネタ一覧'
+      to_new_topic: '会話のネタを提供する'
     new:
       title: 'タグを作成'
     create:
