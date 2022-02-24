@@ -1,5 +1,13 @@
 ja:
   defaults:
+    tab_browser:
+      app_name: '会話のネタ帳'
+      login: '管理者ログイン'
+      topics_index: 'みんなの会話のネタ一覧'
+      topics_new: '会話のネタ作成'
+      tags_index: 'タグ一覧'
+      tags_new: 'タグ作成'
+      tags_show: '%{tag}での会話のネタ一覧'
     app_name: '会話のネタ帳'
     footer_app_name: '© 2022. 会話のネタ帳'
     sign_up: 'ユーザ登録'
