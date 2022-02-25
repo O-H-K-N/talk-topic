@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :tag do
-    name { 'Rspec用タグ'}
+    sequence(:name) { |n| "Rspec用タグ_#{n}" }
   end
 end

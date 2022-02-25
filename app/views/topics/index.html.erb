@@ -3,10 +3,12 @@
   <div class="text-center">
     <h1 class="mt-5 mb-3"><%= t'.title' %></h1>
     <%= link_to t('.to_new_topic'), new_topic_path, class: 'btn btn-warning font-weight-bold text-light mb-3' %>
-    <div class='text-right'>
-      <%= link_to t('defaults.new_order_topic'), topics_path, class: 'btn btn-outline-warning mb-3 mr-2', remote: true %>
-      <%= link_to t('defaults.popular_order_topic'), topics_path(type: 'popular'), class: 'btn btn-outline-warning mb-3', remote: true %>
-    </div>
+    <% if @topics.present? %>
+      <div class='text-right'>
+        <%= link_to t('defaults.new_order_topic'), topics_path, class: 'btn btn-outline-warning mb-3 mr-2', remote: true %>
+        <%= link_to t('defaults.popular_order_topic'), topics_path(type: 'popular'), class: 'btn btn-outline-warning mb-3', remote: true %>
+      </div>
+    <% end %>
   </div>
   <%= render 'topics', topics: @topics %>
 </div>

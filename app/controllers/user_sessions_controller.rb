@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
   def create
     @user = login(params[:email], params[:password])
     if @user
-      redirect_back_or_to topics_path, success: t('.login_success')
+      redirect_back_or_to tags_path, success: t('.login_success')
     else
       flash.now[:danger] = t('.login_error')
       render :new

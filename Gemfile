@@ -88,6 +88,7 @@ group :development do
 end
 
 group :test do
+  gem 'webdrivers', '~> 4.0'
   gem 'capybara'
   gem 'faker'
   gem 'gimei'
