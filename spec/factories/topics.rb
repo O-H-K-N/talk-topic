@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :topic do
-    user_name { '投稿者のお名前' }
-    title { '会話のネタ' }
+    sequence(:user_name) { |n| "投稿者のお名前_#{n}" }
+    sequence(:title) { |n| "会話のネタ_#{n}" }
   end
 end
