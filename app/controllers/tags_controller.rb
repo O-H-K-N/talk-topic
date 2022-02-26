@@ -11,9 +11,9 @@ class TagsController < ApplicationController
       topics = @tag.topics.all
       if params[:type] == 'popular'
         topics = topics.sort {|a,b| b.likes.size <=> a.likes.size}
-        @topics = Kaminari.paginate_array(topics).page(params[:page]).per(10)
+        @topics = Kaminari.paginate_array(topics).page(params[:page])
       else
-        @topics = topics.order(created_at: :desc).page(params[:page]).per(10)
+        @topics = topics.order(created_at: :desc).page(params[:page])
       end
     else
       redirect_to root_path

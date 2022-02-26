@@ -5,9 +5,9 @@ class TopicsController < ApplicationController
     topics = Topic.all
     if params[:type] == 'popular'
       topics = topics.sort {|a,b| b.likes.size <=> a.likes.size}
-      @topics = Kaminari.paginate_array(topics).page(params[:page]).per(10)
+      @topics = Kaminari.paginate_array(topics).page(params[:page])
     else
-      @topics = topics.order(created_at: :desc).page(params[:page]).per(10)
+      @topics = topics.order(created_at: :desc).page(params[:page])
     end
   end
 
