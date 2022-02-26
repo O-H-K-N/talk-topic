@@ -48,8 +48,6 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'font-awesome-sass'
 
-gem "sorcery"
-
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -71,9 +69,6 @@ group :development, :test do
 
   #Japanese support
   gem 'rails-i18n'
-
-  #other
-  gem 'kaminari'
 end
 
 group :development do
@@ -94,3 +89,7 @@ group :test do
   gem 'gimei'
 end
 
+group :development, :test, :production do
+  gem "sorcery"
+  gem 'kaminari'
+end
