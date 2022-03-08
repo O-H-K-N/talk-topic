@@ -28,7 +28,8 @@ ja:
     new_topic: '会話のネタを提供する'
     offer_day: '提供日'
     delete: '削除ボタン'
-    delete_confirm: 'タグ：「%{name}」を削除してもよろしいですか？'
+    delete_topic_confirm: '会話のネタを削除してもよろしいですか？'
+    delete_tag_confirm: 'タグ：「%{name}」を削除してもよろしいですか？'
   views:
     pagination:
       first: "&laquo; 最初"
@@ -62,6 +63,8 @@ ja:
     create:
       success: 'ネタの提供ありがとうございます！'
       danger: '作成できませんでした'
+    destroy:
+      success: '会話のネタを削除しました'
   tags:
     index:
       title: 'タグ一覧'

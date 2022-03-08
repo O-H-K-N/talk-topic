@@ -42,7 +42,7 @@ RSpec.describe 'Tags', type: :system do
     end
 
     describe 'ログインしている場合' do
-      before{ login(user)}
+      before{ login(user) }
       describe 'タグ一覧' do
         it 'タグ一覧ページに遷移でき、作成したタグが表示される' do
           visit tags_path

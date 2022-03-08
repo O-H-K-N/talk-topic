@@ -1,7 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe 'Topics', type: :system do
+  let(:user) { create(:user) }
   let!(:tag) { create(:tag) }
+  def login(user)
+    visit login_path
+    fill_in 'メールアドレス', with: user.email
+    fill_in 'パスワード', with: 'password'
+    click_button 'ログイン'
+  end
 
   describe '一覧' do
     context '投稿なし' do
@@ -66,6 +73,22 @@ RSpec.describe 'Topics', type: :system do
         expect(Topic.count).to eq 0
         expect(current_path).to eq '/topics'
         expect(page).to have_content 'タグを入力してください'
+      end
+    end
+  end
+
+  describe '削除' do
+    let!(:topic) { create(:topic, tag_ids: tag.id) }
+    describe 'ログインしている場合' do
+      before{ login(user) }
+      it '会話のネタの削除に成功する' do
+        visit topics_path
+        click_on topic.title
+        expect(page.accept_confirm).to eq "会話のネタを削除してもよろしいですか？"
+        expect(page).to have_content "会話のネタを削除しました"
+        expect(current_path).to eq topics_path
+        visit topics_path
+        expect(page).not_to have_content topic.title
       end
     end
   end

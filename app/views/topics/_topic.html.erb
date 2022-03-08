@@ -4,7 +4,13 @@
       <p class='mb-0'><%= topic.user_name %></p>
     </td>
     <td>
-      <%= simple_format(topic.title, {}, wrapper_tag: "strong") %>
+      <% if logged_in? %>
+        <%= link_to topic_path(topic), title: '削除？', method: :delete, data: { confirm: t('defaults.delete_topic_confirm') } do %>
+          <%= simple_format(topic.title, {}, wrapper_tag: "strong") %>
+        <% end %>
+      <% else %>
+        <%= simple_format(topic.title, {}, wrapper_tag: "strong") %>
+      <% end %>
     </td>
     <td>
       <div class="row pl-3">

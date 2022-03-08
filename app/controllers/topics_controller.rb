@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  skip_before_action :require_login
+  before_action :require_login, only: :destroy
 
   def index
     topics = Topic.all
@@ -22,6 +22,12 @@ class TopicsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    topic = Topic.find(params[:id])
+    topic.destroy
+    redirect_to topics_path, success: t('.success')
   end
 
   private
