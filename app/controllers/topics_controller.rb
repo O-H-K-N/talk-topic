@@ -1,13 +1,13 @@
 class TopicsController < ApplicationController
-  skip_before_action :require_login
+  before_action :require_login, only: :destroy
 
   def index
     topics = Topic.all
     if params[:type] == 'popular'
       topics = topics.sort {|a,b| b.likes.size <=> a.likes.size}
-      @topics = Kaminari.paginate_array(topics).page(params[:page]).per(10)
+      @topics = Kaminari.paginate_array(topics).page(params[:page])
     else
-      @topics = topics.order(created_at: :desc).page(params[:page]).per(10)
+      @topics = topics.order(created_at: :desc).page(params[:page])
     end
   end
 
@@ -22,6 +22,12 @@ class TopicsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    topic = Topic.find(params[:id])
+    topic.destroy
+    redirect_to topics_path, success: t('.success')
   end
 
   private

@@ -43,12 +43,16 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 # Use Sass to process CSS
-gem "sass-rails"
+gem 'sassc'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'font-awesome-sass'
 
-gem "sorcery"
+#Japanese support
+gem 'rails-i18n'
+
+#meta-tag
+gem 'meta-tags'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -68,12 +72,6 @@ group :development, :test do
   # Code analyse
   gem 'rubocop', require: false
   gem 'rubocop-rails', require:false
-
-  #Japanese support
-  gem 'rails-i18n'
-
-  #other
-  gem 'kaminari'
 end
 
 group :development do
@@ -94,3 +92,7 @@ group :test do
   gem 'gimei'
 end
 
+group :development, :test, :production do
+  gem "sorcery"
+  gem 'kaminari'
+end
